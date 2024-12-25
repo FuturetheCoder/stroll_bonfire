@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   flutter_screenutil: ^5.9.3
+  sizer: ^2.0.15
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -80,7 +82,7 @@ flutter:
   fonts:
     - family: Proxima
       fonts:
-        - asset: fonts/Proxima-Nova.ttf
+        - asset: assets/fonts/Proxima-Nova.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

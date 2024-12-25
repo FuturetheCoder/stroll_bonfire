@@ -11,4 +11,9 @@ class AppColors {
   static const Color secondAsh = Color(0xFFE5E5E5);
   static const Color black = Color(0xFF020202);
   static const Color blueBlack = Color(0xFF0F1115);
+  static const Color navBlack = Color(0xFF0F1115);
+  static const Color tabGrey = Color(0xFF232A2E);
+
+
+
 }

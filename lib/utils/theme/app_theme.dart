@@ -15,33 +15,30 @@ class AppTheme {
         fontWeight: FontWeight.w400,
         color: AppColors.ash,
       ),
-      
       headlineLarge: TextStyle(
         fontFamily: 'Proxima',
         fontSize: 34.0.sp,
         fontWeight: FontWeight.w700,
         color: AppColors.headlinePurple,
       ),
-    
-     titleLarge:TextStyle(
+      titleLarge: TextStyle(
         fontFamily: 'Proxima',
         fontSize: 20.0.sp,
         fontWeight: FontWeight.w700,
         color: AppColors.neutralWhite,
-      ) ,
+      ),
       labelMedium: TextStyle(
         fontFamily: 'Proxima',
         fontSize: 12.0.sp,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w500,
         color: AppColors.secondAsh,
       ),
-      labelSmall:  TextStyle(
+      labelSmall: TextStyle(
         fontFamily: 'Proxima',
         fontSize: 11.0.sp,
         fontWeight: FontWeight.w700,
         color: AppColors.neutralWhite,
       ),
-      
     ),
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.neutralWhite,
@@ -50,16 +47,16 @@ class AppTheme {
         fontSize: 20.0.sp,
         fontWeight: FontWeight.w700,
         color: AppColors.neutralWhite,
-      ) ,
+      ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         textStyle: TextStyle(
-        fontFamily: 'Proxima',
-        fontSize: 20.0.sp,
-        fontWeight: FontWeight.w700,
-        color: AppColors.black,
-      ) ,
+          fontFamily: 'Proxima',
+          fontSize: 20.0.sp,
+          fontWeight: FontWeight.w700,
+          color: AppColors.black,
+        ),
         backgroundColor: AppColors.iconPurple,
         side: const BorderSide(color: AppColors.iconPurple, width: 1.0),
       ),
@@ -79,16 +76,16 @@ class AppTheme {
         fontSize: 20.0.sp,
         fontWeight: FontWeight.w700,
         color: AppColors.neutralWhite,
-      ) ,
+      ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         textStyle: TextStyle(
-        fontFamily: 'Proxima',
-        fontSize: 20.0.sp,
-        fontWeight: FontWeight.w700,
-        color: AppColors.neutralWhite,
-      ) ,
+          fontFamily: 'Proxima',
+          fontSize: 20.0.sp,
+          fontWeight: FontWeight.w700,
+          color: AppColors.neutralWhite,
+        ),
       ),
     ),
   );
