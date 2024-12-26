@@ -18,6 +18,8 @@ class AppSpacer {
   static final H40 = SizedBox(height: 40.h);
   static final H30 = SizedBox(height: 30.h);
   static final H32 = SizedBox(height: 32.h);
+  static final H34 = SizedBox(height: 34.h);
+  static final H35 = SizedBox(height: 35.h);
   static final H16 = SizedBox(height: 16.h);
   static final H25 = SizedBox(height: 25.h);
   static final H20 = SizedBox(height: 20.h);

@@ -22,7 +22,7 @@ class StrollBonfireScreenState extends State<StrollBonfireScreen> {
                 image: AssetImage(
                   AppImages.backgroundImage,
                 ),
-                fit: BoxFit.cover)),
+                fit: BoxFit.fill)),
         child: Column(
           children: [
             const SizedBox(height: 50), // For status bar padding
@@ -80,7 +80,7 @@ class StrollBonfireScreenState extends State<StrollBonfireScreen> {
                     ],
                   ),
 
-                  AppSpacer.H32,
+                  AppSpacer.H35,
                   SizedBox(
                     width: 200, // Adjust the size of the stack container
                     height: 70,
@@ -97,7 +97,7 @@ class StrollBonfireScreenState extends State<StrollBonfireScreen> {
                                 horizontal:
                                     12), // Add padding around the option
                             decoration: const BoxDecoration(
-                              color: AppColors.tabGrey,
+                              color: AppColors.blueBlack,
                               borderRadius: BorderRadius.only(
                                 bottomRight: Radius.circular(12),
                                 topRight: Radius.circular(12),
@@ -174,7 +174,7 @@ class StrollBonfireScreenState extends State<StrollBonfireScreen> {
                     crossAxisCount: 2,
                     crossAxisSpacing: 14,
                     mainAxisSpacing: 12,
-                    childAspectRatio: 2.8,
+                    childAspectRatio: 3.4,
                     children: [
                       _buildOption('A', 'The peace in the early mornings'),
                       _buildOption('B', 'The magical golden hours'),
@@ -250,9 +250,8 @@ class StrollBonfireScreenState extends State<StrollBonfireScreen> {
         });
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 8.0),
-             // Add padding around the option
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        // Add padding around the option
         decoration: BoxDecoration(
           color: AppColors.tabGrey,
           borderRadius: BorderRadius.circular(8),
@@ -273,7 +272,7 @@ class StrollBonfireScreenState extends State<StrollBonfireScreen> {
           children: [
             // Circle around the letter
             Container(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                 color: borderColor,
                 shape: BoxShape.circle,
