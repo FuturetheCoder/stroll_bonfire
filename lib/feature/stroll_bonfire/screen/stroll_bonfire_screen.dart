@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:stroll_bonfire/feature/stroll_bonfire/widget/custom_round_button.dart';
 import '../../../utils/utils.dart';
+import 'dart:io' show Platform; 
 
 class StrollBonfireScreen extends StatefulWidget {
   const StrollBonfireScreen({super.key});
@@ -15,6 +16,7 @@ class StrollBonfireScreenState extends State<StrollBonfireScreen> {
 
   @override
   Widget build(BuildContext context) {
+     final double childAspectRatio = Platform.isAndroid ? 3.4 : 4.0;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -174,7 +176,7 @@ class StrollBonfireScreenState extends State<StrollBonfireScreen> {
                     crossAxisCount: 2,
                     crossAxisSpacing: 14,
                     mainAxisSpacing: 12,
-                    childAspectRatio: 3.4,
+                    childAspectRatio: childAspectRatio,
                     children: [
                       _buildOption('A', 'The peace in the early mornings'),
                       _buildOption('B', 'The magical golden hours'),
