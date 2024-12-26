@@ -30,7 +30,7 @@ class AppTheme {
       labelMedium: TextStyle(
         fontFamily: 'Proxima',
         fontSize: 12.0.sp,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w100,
         color: AppColors.secondAsh,
       ),
       labelSmall: TextStyle(

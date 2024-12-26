@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stroll_bonfire/utils/utils.dart';
 
+// ignore: must_be_immutable
 class RoundButton extends StatelessWidget {
   String? icon;
   bool hasBorder = false;

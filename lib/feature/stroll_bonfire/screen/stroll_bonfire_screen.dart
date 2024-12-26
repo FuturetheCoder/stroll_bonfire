@@ -7,10 +7,10 @@ class StrollBonfireScreen extends StatefulWidget {
   const StrollBonfireScreen({super.key});
 
   @override
-  _StrollBonfireScreenState createState() => _StrollBonfireScreenState();
+  StrollBonfireScreenState createState() => StrollBonfireScreenState();
 }
 
-class _StrollBonfireScreenState extends State<StrollBonfireScreen> {
+class StrollBonfireScreenState extends State<StrollBonfireScreen> {
   String? selectedOption; // Track the selected option
 
   @override
@@ -36,7 +36,19 @@ class _StrollBonfireScreenState extends State<StrollBonfireScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Stroll Bonfire',
-                          style: Theme.of(context).textTheme.headlineLarge),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineLarge!
+                              .copyWith(
+                            shadows: [
+                              Shadow(
+                                blurRadius: 2.0,
+                                color:
+                                    AppColors.headlinePurple.withOpacity(0.5),
+                                offset: const Offset(1, 2),
+                              ),
+                            ],
+                          )),
                       AppSpacer.W1,
                       SvgPicture.asset(AppImages.dropdown)
                     ],
@@ -52,7 +64,9 @@ class _StrollBonfireScreenState extends State<StrollBonfireScreen> {
                           style: Theme.of(context)
                               .textTheme
                               .labelMedium!
-                              .copyWith(color: AppColors.white)),
+                              .copyWith(
+                                  color: AppColors.white,
+                                  fontWeight: FontWeight.bold)),
                       AppSpacer.W3,
                       SvgPicture.asset(AppImages.userSmall),
                       AppSpacer.W1,
@@ -60,31 +74,88 @@ class _StrollBonfireScreenState extends State<StrollBonfireScreen> {
                           style: Theme.of(context)
                               .textTheme
                               .labelMedium!
-                              .copyWith(color: AppColors.white)),
+                              .copyWith(
+                                  color: AppColors.white,
+                                  fontWeight: FontWeight.bold)),
                     ],
                   ),
 
-                  AppSpacer.H30,
+                  AppSpacer.H32,
+                  SizedBox(
+                    width: 200, // Adjust the size of the stack container
+                    height: 70,
+                    child: Stack(
+                      clipBehavior: Clip.none, // Allow content to overflow
+                      children: [
+                        // Positioned text at the top right corner
+                        Positioned(
+                          top: -5,
+                          right: 45,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5.0,
+                                horizontal:
+                                    12), // Add padding around the option
+                            decoration: const BoxDecoration(
+                              color: AppColors.tabGrey,
+                              borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(12),
+                                topRight: Radius.circular(12),
+                              ),
+                            ),
+                            child: Text('Angelina, 28',
+                                style: Theme.of(context).textTheme.labelSmall),
+                          ),
+                        ),
+                        Positioned(
+                          top: 25,
+                          left: 80,
+                          child: Text(
+                              'What is your favorite time\n of the day?',
+                              style: Theme.of(context).textTheme.titleLarge),
+                        ),
+                        // Positioned CircleAvatar at the bottom left
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          child: Image.asset(
+                            AppImages.angelinaAvatar,
+                            width: 90,
+                            height: 90,
+                          ), // Replace with your image URL
+                        ),
+                      ],
+                    ),
+                  ),
                   // Poll Question
-                  Row(
+                  /* Row(
                     children: [
                       SizedBox(
                         child: Image.asset(AppImages.angelinaAvatar),
-                        height: 70,
-                        width: 70,
+                        height: 90,
+                        width: 90,
                       ),
-                      SizedBox(width: 12),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Angelina, 28',
-                              style: Theme.of(context).textTheme.labelSmall),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5.0,
+                                horizontal:
+                                    10), // Add padding around the option
+                            decoration: BoxDecoration(
+                              color: AppColors.tabGrey,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Text('Angelina, 28',
+                                style: Theme.of(context).textTheme.labelSmall),
+                          ),
                           Text('What is your favorite time\n of the day?',
                               style: Theme.of(context).textTheme.titleLarge),
                         ],
                       ),
                     ],
-                  ),
+                  ),*/
                   const SizedBox(height: 10),
 
                   Center(
@@ -100,10 +171,10 @@ class _StrollBonfireScreenState extends State<StrollBonfireScreen> {
                   // Options in GridView
                   GridView.count(
                     shrinkWrap: true,
-                    crossAxisCount: 2, // 2 columns for the grid
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 2.5, // Adjust aspect ratio for appearance
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 14,
+                    mainAxisSpacing: 12,
+                    childAspectRatio: 2.8,
                     children: [
                       _buildOption('A', 'The peace in the early mornings'),
                       _buildOption('B', 'The magical golden hours'),
@@ -111,7 +182,7 @@ class _StrollBonfireScreenState extends State<StrollBonfireScreen> {
                       _buildOption('D', 'The serenity past midnight'),
                     ],
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 10),
                   // Pick your option text with round FloatingActionButtons
                   Row(
                     children: [
@@ -125,7 +196,7 @@ class _StrollBonfireScreenState extends State<StrollBonfireScreen> {
                         icon: AppImages.mic,
                         onTap: () {},
                       ),
-                      const SizedBox(width: 10), // Space between buttons
+                      const SizedBox(width: 10),
                       RoundButton(
                         hasBorder: false,
                         icon: AppImages.arrow,
@@ -167,7 +238,8 @@ class _StrollBonfireScreenState extends State<StrollBonfireScreen> {
   }
 
   Widget _buildOption(String letter, String text) {
-    bool isSelected = selectedOption == letter; // Check if this option is selected
+    bool isSelected =
+        selectedOption == letter; // Check if this option is selected
     Color borderColor = isSelected ? AppColors.iconPurple : AppColors.tabGrey;
     Color circleBorderColor = isSelected ? AppColors.iconPurple : Colors.white;
 
@@ -178,7 +250,9 @@ class _StrollBonfireScreenState extends State<StrollBonfireScreen> {
         });
       },
       child: Container(
-        padding: const EdgeInsets.all(8.0), // Add padding around the option
+        padding: const EdgeInsets.symmetric(
+            horizontal: 8.0),
+             // Add padding around the option
         decoration: BoxDecoration(
           color: AppColors.tabGrey,
           borderRadius: BorderRadius.circular(8),
@@ -186,28 +260,41 @@ class _StrollBonfireScreenState extends State<StrollBonfireScreen> {
             color: borderColor,
             width: 1.5,
           ),
+          boxShadow: const [
+            BoxShadow(
+              color: AppColors.tabGrey, // Shadow color with opacity
+              spreadRadius: 1, // Spread radius of the shadow
+              blurRadius: 1,
+              offset: Offset(2, 2),
+            ),
+          ],
         ),
         child: Row(
           children: [
             // Circle around the letter
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
+                color: borderColor,
                 shape: BoxShape.circle,
                 border: Border.all(color: circleBorderColor, width: 2),
               ),
-              child: Text(
-                letter,
-                style: const TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.bold),
-              ),
+              child: Text(letter,
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelSmall!
+                      .copyWith(color: AppColors.ash)),
             ),
             const SizedBox(width: 12), // Spacing between circle and text
             Expanded(
               child: Text(
                 text,
-                style: const TextStyle(color: Colors.white),
-                maxLines: 2, // Limit the text to 2 lines
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: AppColors.ash, height: 1.0),
+
+                maxLines: 2, // Limit the text to 2 lines for now
                 overflow: TextOverflow.ellipsis, // Handle text overflow
               ),
             ),
